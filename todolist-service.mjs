@@ -1,4 +1,5 @@
-export  class TodolistService {
+export class TodolistService {
+
     todolist = ["Test1", "Test2", "Test3"];
 
     getJsonTodoList() {
@@ -40,4 +41,17 @@ export  class TodolistService {
             response.end();
         })
     }
+
+    deleteTodo(request, response){
+        request.addListener("data", (data) => {
+            const body = JSON.parse(data.toString());
+            if (this.todolist[body.id]) {
+                this.todolist.splice(body.id, 1);
+            }
+
+            response.write(this.getJsonTodoList());
+            response.end();
+        })
+    }
+
 }

@@ -17,6 +17,16 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "id" : 1,
-  "todo" : "Belajar NodeJS"
+  "id" : 4,
+  "todo" : "Pemrograman JavaScript"
+}
+
+###
+
+DELETE http://localhost:3000
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : 2
 }
